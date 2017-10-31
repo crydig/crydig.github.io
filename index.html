@@ -9,7 +9,7 @@
         function AutoRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
-        window.onload = AutoRefresh(1*60*1000); // min * s * ms
+        window.onload = AutoRefresh(10*60*1000); // min * s * ms
 
         var h = new Date().getHours();
         var n = 6;
